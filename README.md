@@ -133,6 +133,7 @@ linemanager: DataTypes.INTEGER
   "photoUrl": "Url for image"
 }
 ```
+<<<<<<< HEAD
 
 ### Return Trip model
 
@@ -147,6 +148,19 @@ linemanager: DataTypes.INTEGER
 }
 ```
 
+=======
+### Oneway Trip model example
+```json
+{
+        "origin": 24,
+        "destination": 22,
+        "from": "2020-10-02",
+        "till": "2020-10-04",
+        "accomodationId": 1,
+        "travelReasons": "You Know Your Reasons"
+}
+```
+>>>>>>> a09f4c1... feat(oneway trip endpoint): create a one way trip booking endpoint
 ### Endpoints
 
 - Hosted url: https://script-heroes-bn-backend-stgng.herokuapp.com/
@@ -157,4 +171,13 @@ linemanager: DataTypes.INTEGER
 - Update Profile: `/api/profile/update`
 - Accomodations: `/api/accomodations`
 - Forgot Password: `/api/forgotPassword`
+<<<<<<< HEAD
 - Trip With Return Date: `/api/trip/return-trip`
+=======
+- oneway Trip Request: `/api/trips/oneway`
+- POST oneway Trip: `/api/trips/oneway`
+- GET ONE oneway Trip: `/api/trips/oneway/:tripId`
+- GET ALL oneway Trip: `/api/trips/oneway`
+- UPDATE oneway Trip: `/api/trips/oneway/:tripId`
+- DELETE oneway Trip: `/api/trips/oneway/:tripId`
+>>>>>>> a09f4c1... feat(oneway trip endpoint): create a one way trip booking endpoint
