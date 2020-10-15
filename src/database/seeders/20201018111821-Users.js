@@ -8,7 +8,7 @@ module.exports = {
       phoneNumber: '07827378390',
       password: 'Password123',
       gender: 'male',
-      birthdate: '03-15-2020',
+      birthdate: '03-11-2020',
       language: 'English',
       currency: 'USD',
       country: 'Rwanda',
