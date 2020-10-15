@@ -1,6 +1,7 @@
 /* eslint-disable require-jsdoc */
 import sgMail from '@sendgrid/mail';
 import template from '../helpers/newRequestEmail';
+
 import { Trip, Request, RequestType, User } from '../database/models';
 
 class RequestsController {
@@ -89,6 +90,31 @@ class RequestsController {
       message: res.__('Requests fetched successfully'),
       requests
     });
+  }
+
+  static async getOpenRequests(req, res) {
+    const { user } = req;
+
+    const requests = await Request.findAll({
+      where: { status: 'pending', userId: user.id },
+      include: [{ model: Trip, as: 'trips' }]
+    });
+
+    if (!requests || !requests.length) {
+      return res.status(404).json({
+        error: res.__('No requests found')
+      });
+    }
+
+    return res.status(200).json({
+      message: res.__('Requests fetched successfully'),
+      requests
+    });
+  }
+
+  static async updateOpenRequests(req, res) {
+    // waiting
+    console.log('works', req.params);
   }
 }
 export default RequestsController;

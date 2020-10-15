@@ -13,6 +13,14 @@ router.post(
   TripsValidation.multiCity,
   asyncHandler(RequestsController.createMultiCity)
 );
+
+router.get('/open', AuthMiddleware.checkToken, asyncHandler(RequestsController.getOpenRequests));
+router.get(
+  '/open/:id',
+  AuthMiddleware.checkToken,
+  asyncHandler(RequestsController.updateOpenRequests)
+);
+
 router.get(
   '/:id',
   AuthMiddleware.checkToken,
@@ -25,10 +33,8 @@ router.delete(
   Middleware.getRequest,
   asyncHandler(RequestsController.deleteRequest)
 );
-router.get(
-  '/',
-  AuthMiddleware.checkToken,
-  asyncHandler(RequestsController.getRequests)
-);
+router.get('/', AuthMiddleware.checkToken, asyncHandler(RequestsController.getRequests));
+
+// router.patch('/open', asyncHandler(RequestsController.updateOpenRequests));
 
 export default router;
